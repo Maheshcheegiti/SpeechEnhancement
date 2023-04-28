@@ -29,7 +29,7 @@ def process_file(file):
     sr = 16000
     assert rate == sr, "mismatch in sampling rate"
     wave = enh_model_sc(speech[None, ...], sr)
-    return speech, wave[0].squeeze()
+    return speech, wave[0].squeeze(), sr
 
 def main():
     st.set_page_config(page_title="Speech Enhancement", page_icon="🔊", layout="wide")
@@ -41,9 +41,9 @@ def main():
     if uploaded_file is not None:
         if allowed_file(uploaded_file.name):
             with st.spinner("Processing..."):
-                speech, enhanced = process_file(uploaded_file)
-            st.audio(speech, format='audio/wav', start_time=0)
-            st.audio(enhanced, format='audio/wav', start_time=0)
+                speech, enhanced, sr = process_file(uploaded_file)
+            st.audio(speech, format='audio/wav', start_time=0, sample_rate=sr)
+            st.audio(enhanced, format='audio/wav', start_time=0, sample_rate=sr)
         else:
             st.warning("Invalid file type. Please upload a WAV file.")
 
