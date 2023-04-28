@@ -42,7 +42,9 @@ def main():
         if allowed_file(uploaded_file.name):
             with st.spinner("Processing..."):
                 speech, enhanced, sr = process_file(uploaded_file)
+            st.text("Original audio")
             st.audio(speech, format='audio/wav', start_time=0, sample_rate=sr)
+            st.text("Enhanced audio")
             st.audio(enhanced, format='audio/wav', start_time=0, sample_rate=sr)
         else:
             st.warning("Invalid file type. Please upload a WAV file.")
