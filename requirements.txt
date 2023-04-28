@@ -1,0 +1,2 @@
+git+https://github.com/espnet/espnet
+-q espnet_model_zoo
