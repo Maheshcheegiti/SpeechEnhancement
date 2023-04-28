@@ -32,7 +32,7 @@ def process_file(file):
     return speech, wave[0].squeeze(), sr
 
 def main():
-    st.set_page_config(page_title="Speech Enhancement", page_icon="🔊", layout="wide")
+    st.set_page_config(page_title="Speech Enhancement | ESPNET", page_icon="🔊", layout="wide")
 
     st.title("Speech Enhancement - ESPNET 🔊")
 
