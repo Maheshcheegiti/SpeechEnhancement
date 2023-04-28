@@ -1,1 +1,2 @@
 git+https://github.com/espnet/espnet
+espnet_model_zoo
