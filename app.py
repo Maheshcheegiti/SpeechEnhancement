@@ -33,56 +33,8 @@ def process_file(file):
 
 def main():
     st.set_page_config(page_title="Speech Enhancement", page_icon="🔊", layout="wide")
-    
-    # Add custom CSS styles
-    st.markdown(
-        """
-        <style>
-        .stFileUploader label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #555;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            background-color: #f7f7f7;
-            cursor: pointer;
-        }
 
-        .stFileUploader small {
-            font-size: 14px;
-            font-weight: 400;
-            color: #999;
-            margin-top: 6px;
-            display: block;
-        }
-
-        .stButton button {
-            background-color: #f44336;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 12px 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .stButton button:hover {
-            background-color: #d32f2f;
-        }
-
-        .stAudio audio {
-            width: 100%;
-            margin: 24px 0;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
-    st.title("Speech Enhancement")
+    st.title("Speech Enhancement 🔊")
 
     uploaded_file = st.file_uploader("Upload an audio file", type=ALLOWED_EXTENSIONS)
 
